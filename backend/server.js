@@ -5,7 +5,7 @@ const cors = require('cors');
 const {router,detailsSchema} = require('./details'); // Import additional routes
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Middleware
 app.use(cors()); // Allow requests from your React app
