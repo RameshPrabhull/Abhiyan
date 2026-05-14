@@ -7,6 +7,8 @@ const Registration = ({toRegisteration,toParent}) => {
   const [signUpForm, setSignUpForm] = useState({ name: '', email: '', password: '' });
   const [signInForm, setSignInForm] = useState({ email: '', password: '' });
   const nav=useNavigate();
+  
+
   const handleToggleMode = () => {
     setIsSignUpMode((prevMode) => !prevMode);
   };
@@ -22,6 +24,12 @@ const Registration = ({toRegisteration,toParent}) => {
   };
 
   const handleSignUp = async () => {
+     console.log(import.meta.env.VITE_APP_ENV)
+    if(import.meta.env.VITE_APP_ENV == "DEV"){
+        toRegisteration("test@gmail.com")
+    nav("/pages/details.jsx");
+    }
+    else{
     try {
       const response = await fetch('http://localhost:3000/signup', {
         method: 'POST',
@@ -32,7 +40,7 @@ const Registration = ({toRegisteration,toParent}) => {
 
       if (response.ok) {
         toRegisteration(signUpForm.email)
-        nav("/pages/details.js"); // Redirect on success
+        nav("/pages/details.jsx"); // Redirect on success
       } else {
         alert(data.error);
       }
@@ -41,9 +49,16 @@ const Registration = ({toRegisteration,toParent}) => {
       console.error('Error:', error);
       alert('An error occurred while signing up.');
     }
+  }
   };
 
   const handleSignIn = async () => {
+    console.log(import.meta.env.VITE_APP_ENV)
+    if(import.meta.env.VITE_APP_ENV == "DEV"){
+         toParent({});
+          nav("/pages/Recommend.jsx");
+    }
+    else{
     try {
       const response = await fetch('http://localhost:3000/signin', {
         method: 'POST',
@@ -55,7 +70,7 @@ const Registration = ({toRegisteration,toParent}) => {
       if (response.ok) {
         //alert(data.message);
         toParent(data.details);
-        nav("/pages/Recommend.js"); // Redirect on success
+        nav("/pages/Recommend.jsx"); // Redirect on success
       } else {
         alert(data.error);
       }
@@ -63,6 +78,7 @@ const Registration = ({toRegisteration,toParent}) => {
       console.error('Error:', error);
       alert('An error occurred while signing in.');
     }
+  }
   };
 
   return (

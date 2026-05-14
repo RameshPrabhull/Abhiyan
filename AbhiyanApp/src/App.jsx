@@ -30,8 +30,8 @@ import Registration from './pages/Registration';
 // import Services from './pages/Services';
 // import About from './pages/About';
 // import Contact from './pages/Contact';
-// import UserDetails from './pages/details';
-// import Recommend from './pages/Recommend';
+import UserDetails from './pages/details';
+import Recommend from './pages/Recommend';
 // import AbhiyanChatbot from './pages/Chatbot';
 import { useState } from 'react';
 function App() {
@@ -53,9 +53,9 @@ function App() {
         <Route path="/pages/Home.js" element={<Home />} />
         <Route path="/pages/Contact.js" element={<Contact />} /> */}
         <Route path="/pages/Registration.jsx" element={<Registration toRegisteration={fromDetails} toParent={fromChild}/>} />
-        {/* <Route path="/pages/details.js" element={<UserDetails toParent={fromChild} email={email}/>} />
-        <Route path="/pages/Recommend.js" element={<Recommend userData={userdata}/>} />
-        <Route path="/pages/Chatbot.js" element={<AbhiyanChatbot />} /> */}
+         <Route path="/pages/details.jsx" element={<UserDetails toParent={fromChild} email={email}/>} />
+        <Route path="/pages/Recommend.jsx" element={<Recommend userData={userdata}/>} />
+        {/*<Route path="/pages/Chatbot.js" element={<AbhiyanChatbot />} /> */}
       </Routes>
     </Router>
   );
