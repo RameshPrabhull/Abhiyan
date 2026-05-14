@@ -1,0 +1,12 @@
+.col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    gap: 1px;
+}
+.col .card{
+    border: 2px solid black;
+    gap: 3px;
+    padding: 5px;
+}

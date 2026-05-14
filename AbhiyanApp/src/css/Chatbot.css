@@ -1,0 +1,12 @@
+button{
+    color: #000;
+    background-color: rgb(91, 210, 172);
+}
+
+div.interface{
+    background-color: black;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 10px;
+
+}
